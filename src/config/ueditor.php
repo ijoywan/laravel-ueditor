@@ -15,9 +15,13 @@ return [
     'route' => [
         'name' => '/ueditor/server',
         'options' => [
-            // middleware => 'auth',
+            // 千万别少掉 'web',不然可能会出现 302
+            // 'middleware' => ['web',auth'],
         ],
     ],
+
+    // 是否使用 md5 格式文件名
+    'hash_filename' => true,
 
     // 上传 配置
     'upload' => [

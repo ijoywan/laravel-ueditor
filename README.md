@@ -1,6 +1,10 @@
 # Laravel-UEditor
 
-UEditor integration for Laravel 5.
+UEditor integration for Laravel 7.
+
+## 感谢
+
+首先感谢 [https://github.com/overtrue/laravel-ueditor][https://github.com/overtrue/laravel-ueditor]，因为这套源码是在他的基础上改的，本来想提一个 PR，奈何人家已经归档
 
 # 使用
 
@@ -9,7 +13,7 @@ UEditor integration for Laravel 5.
 ## 安装
 
 ```shell
-$ composer require "overtrue/laravel-ueditor:~1.0"
+$ composer require "iyi/laravel-ueditor:~1.0"
 ```
 
 ## 配置
@@ -17,13 +21,13 @@ $ composer require "overtrue/laravel-ueditor:~1.0"
 1. 添加下面一行到 `config/app.php` 中 `providers` 部分：
 
     ```php
-    Overtrue\LaravelUEditor\UEditorServiceProvider::class,
+    Iyi\LaravelUEditor\UEditorServiceProvider::class,
     ```
 
 2. 发布配置文件与资源
 
     ```php
-    $ php artisan vendor:publish --provider='Overtrue\LaravelUEditor\UEditorServiceProvider'
+    $ php artisan vendor:publish --provider='Iyi\LaravelUEditor\UEditorServiceProvider'
     ```
 
 3. 模板引入编辑器
@@ -51,15 +55,13 @@ $ composer require "overtrue/laravel-ueditor:~1.0"
 
 # 说明
 
-1. 5.4+ 请不要忘记 `php artisan storage:link`
-1. 如果你使用的是 laravel 5.3 以下版本，请先创建软链接：
-    ```shell
-    # 请在项目根目录执行以下命令
-    $ ln -s `pwd`/storage/app/public `pwd`/public/storage
-    ```
-1. 在 `config/ueditor.php` 配置 `disk` 为 `'public'` 情况下，上传路径在：`public/uploads/` 下，确认该目录存在并可写。
-1. 如果要修改上传路径，请在 `config/ueditor.php` 里各种类型的上传路径，但是都在 public 下。
-1. 请在 `.env` 中正确配置 `APP_URL` 为你的当前域名，否则可能上传成功了，但是无法正确显示。
+1. 请不要忘记 `php artisan storage:link`
+
+2. 在 `config/ueditor.php` 配置 `disk` 为 `'public'` 情况下，上传路径在：`public/uploads/` 下，确认该目录存在并可写。
+
+3. 如果要修改上传路径，请在 `config/ueditor.php` 里各种类型的上传路径，但是都在 public 下。
+
+4. 请在 `.env` 中正确配置 `APP_URL` 为你的当前域名，否则可能上传成功了，但是无法正确显示。
 
 ## 七牛支持
 
@@ -82,11 +84,11 @@ $ composer require "overtrue/laravel-ueditor:~1.0"
 你肯定有一些朋友肯定会有一些比较特殊的场景，那么你可以使用本插件提供的事件来支持：
 
 > 请按照 Laravel 事件的文档来使用：
-> https://laravel.com/docs/5.4/events#registering-events-and-listeners
+> https://laravel.com/docs/7.x/events#registering-events-and-listeners
 
 ### 上传中事件
 
-> Overtrue\LaravelUEditor\Events\Uploading
+> Iyi\LaravelUEditor\Events\Uploading
 
 在保存文件之前，你可以拿到一些信息：
 
@@ -98,7 +100,7 @@ $ composer require "overtrue/laravel-ueditor:~1.0"
 
 ### 上传完成事件
 
-> Overtrue\LaravelUEditor\Events\Uploaded
+> Iyi\LaravelUEditor\Events\Uploaded
 
 它有两个属性：
 
