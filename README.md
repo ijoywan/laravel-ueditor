@@ -4,7 +4,7 @@ UEditor integration for Laravel 7.
 
 ## 感谢
 
-首先感谢 [https://github.com/overtrue/laravel-ueditor][https://github.com/overtrue/laravel-ueditor]，因为这套源码是在他的基础上改的，本来想提一个 PR，奈何人家已经归档
+首先感谢 [https://github.com/overtrue/laravel-ueditor](https://github.com/overtrue/laravel-ueditor)，因为这套源码是在他的基础上改的，本来想提一个 PR，奈何人家已经归档
 
 # 使用
 
@@ -13,7 +13,7 @@ UEditor integration for Laravel 7.
 ## 安装
 
 ```shell
-$ composer require "iyi/laravel-ueditor:~1.0"
+$ composer require "ijoywan/laravel-ueditor:~1.0"
 ```
 
 ## 配置
